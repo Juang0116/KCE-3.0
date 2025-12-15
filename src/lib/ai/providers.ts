@@ -1,4 +1,4 @@
-// src/features/ai/generate.ts
+// src/features/ai/providers.ts
 import { serverEnv } from '@/lib/env';
 
 /* ─────────────────────────────────────────────────────────────

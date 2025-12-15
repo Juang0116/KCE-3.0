@@ -1,4 +1,4 @@
-// src/features/tours/search.ts
+// src/features/tours/rag.ts
 import { getSupabase } from '@/lib/supabase';
 
 /* ──────────────────────────── Tipos ──────────────────────────── */
