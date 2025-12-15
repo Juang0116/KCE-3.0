@@ -7,7 +7,6 @@ import type { Metadata, Viewport } from 'next';
 
 import Header from '@/components/Header';
 import ChatWidget from '@/features/ai/ChatWidget';
-// import { SITE_URL, SITE_NAME, SITE_TWITTER } from '@/lib/config'; // ← futuro
 
 /* ─────────────────────────────────────────────────────────────
    Fuentes (expuestas como variables CSS para Tailwind/brand.css)
@@ -29,8 +28,7 @@ const body = Poppins({
 /* ─────────────────────────────────────────────────────────────
    Configuración base del sitio
    ───────────────────────────────────────────────────────────── */
-const SITE =
-  (process.env.NEXT_PUBLIC_SITE_URL || 'https://kce.travel').replace(/\/+$/, '');
+const SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://kce.travel').replace(/\/+$/, '');
 
 /* ─────────────────────────────────────────────────────────────
    Metadata global (SEO, OG, Twitter)
@@ -51,30 +49,12 @@ export const metadata: Metadata = {
       en: '/',
     },
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
   manifest: '/site.webmanifest',
-  formatDetection: {
-    telephone: false,
-    email: false,
-    address: false,
-  },
-  keywords: [
-    'KCE',
-    'tours en Colombia',
-    'viajes culturales',
-    'Bogotá',
-    'Caldas',
-    'Cartagena',
-  ],
+  formatDetection: { telephone: false, email: false, address: false },
+  keywords: ['KCE', 'tours en Colombia', 'viajes culturales', 'Bogotá', 'Caldas', 'Cartagena'],
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.ico' }, { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' }],
     apple: [{ url: '/icons/icon-192.png' }],
     shortcut: ['/favicon.ico'],
   },
@@ -85,7 +65,6 @@ export const metadata: Metadata = {
     siteName: 'KCE',
     locale: 'es_CO',
     type: 'website',
-    // Asegúrate de tener /public/og.jpg. Si no, comenta esta línea.
     images: [{ url: '/og.jpg' }],
   },
   twitter: {
@@ -108,24 +87,22 @@ export const viewport: Viewport = {
   initialScale: 1,
   interactiveWidget: 'resizes-visual',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FFF5E1' }, // brand.beige
-    { media: '(prefers-color-scheme: dark)', color: '#111827' },  // brand.dark
+    { media: '(prefers-color-scheme: light)', color: '#FFF5E1' },
+    { media: '(prefers-color-scheme: dark)', color: '#111827' },
   ],
 };
 
 /* ─────────────────────────────────────────────────────────────
    Root Layout
    ───────────────────────────────────────────────────────────── */
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="es"
       dir="ltr"
       className={`${heading.variable} ${body.variable}`}
+      data-theme="light"
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -140,9 +117,7 @@ export default function RootLayout({
           min-h-dvh bg-[color:var(--color-bg)] font-body text-[color:var(--color-text)] antialiased
           selection:bg-brand-yellow/40
         "
-        suppressHydrationWarning
       >
-        {/* Enlace para saltar al contenido (a11y) */}
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 rounded bg-[color:var(--color-surface)] px-3 py-1 shadow-soft text-[color:var(--color-text)]"
@@ -150,18 +125,14 @@ export default function RootLayout({
           Saltar al contenido
         </a>
 
-        {/* Cabecera global */}
         <Header />
 
-        {/* Contenido de página */}
         <main id="main" className="pt-20 pb-16">
           {children}
         </main>
 
-        {/* Chat IA flotante */}
         <ChatWidget />
 
-        {/* Mensaje para navegadores sin JS */}
         <noscript>
           <div className="mx-auto my-6 max-w-3xl rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
             Algunas funciones (chat, animaciones y checkout) requieren JavaScript habilitado.

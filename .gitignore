@@ -62,11 +62,19 @@ playwright/.cache/
 # ─────────────────────────────────────────────────────────────
 .env
 .env.local
-.env.*
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Si alguna vez creas variantes locales adicionales:
+.env.*.local
+
+# Permitir plantillas / ejemplos versionables
 !.env.example
 !.env.local.example
 !.env.sample
 !.env.schema
+
 
 # Supabase CLI (estado local, no confundir con /supabase migraciones)
 .supabase/
