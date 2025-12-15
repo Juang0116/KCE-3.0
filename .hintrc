@@ -1,0 +1,42 @@
+{
+  "extends": ["web-recommended", "accessibility"],
+  "formatters": ["stylish"],
+  "hints": {
+    "axe/aria": ["default", { "aria-valid-attr-value": "off" }],
+    "axe/color-contrast": "warning",
+    "axe/form-label": "error",
+    "axe/image-alt": "error",
+
+    "compat-api/html": "default",
+    "compat-api/css": "default",
+    "compat-api/js": "default",
+
+    "meta-charset-utf-8": "error",
+    "meta-viewport": "error",
+    "manifest-is-valid": "warning",
+    "apple-touch-icons": "warning",
+
+    "no-broken-links": ["default", { "severity": "warning", "ignore": ["/_next/*", "/api/*"] }],
+
+    "https-only": "error",
+    "content-type": "error",
+    "x-content-type-options": "warning",
+    "x-frame-options": "warning",
+    "strict-transport-security": "warning",
+
+    "no-inline-styles": "warning",
+    "no-inline-event-handlers": "warning",
+
+    "http-cache": "off",
+    "http-compression": "warning",
+    "sri": "off",
+    "disown-opener": "error",
+    "validate-set-cookie-header": "warning"
+  },
+  "ignoredUrls": [
+    "/_next/*",
+    "/api/*",
+    "^http://localhost(:\\d+)?/",
+    "^http://127\\.0\\.0\\.1(:\\d+)?/"
+  ]
+}

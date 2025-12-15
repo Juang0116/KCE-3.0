@@ -1,0 +1,106 @@
+# ─────────────────────────────────────────────────────────────
+# Node / Next.js
+# ─────────────────────────────────────────────────────────────
+node_modules/
+.next/
+.next/cache/
+.next/standalone/
+.next/static/
+out/
+dist/
+.eslintcache
+*.tsbuildinfo
+.cache/
+.tmp/
+tmp/
+temp/
+.pnp.*
+npm-packages-offline-cache/
+
+# ─────────────────────────────────────────────────────────────
+# Monorepo / Tooling opcional
+# ─────────────────────────────────────────────────────────────
+.turbo/
+.vercel/
+.nx/
+
+# ─────────────────────────────────────────────────────────────
+# Logs / Debug
+# ─────────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.pid
+*.seed
+*.pid.lock
+.node_repl_history
+
+# ─────────────────────────────────────────────────────────────
+# Coverage / Testing
+# ─────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+coverage-final.json
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+# Vitest / Jest
+.vitest/
+# Cypress (descomenta si lo usas)
+# cypress/screenshots/
+# cypress/videos/
+# cypress/downloads/
+
+# ─────────────────────────────────────────────────────────────
+# Entornos / credenciales (mantén solo los ejemplos)
+# ─────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*
+!.env.example
+!.env.local.example
+!.env.sample
+!.env.schema
+
+# Supabase CLI (estado local, no confundir con /supabase migraciones)
+.supabase/
+
+# ─────────────────────────────────────────────────────────────
+# SO / IDE / Editor
+# ─────────────────────────────────────────────────────────────
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+# Windows
+Thumbs.db
+# IDEs
+.vscode/
+.idea/
+*.iml
+.history/
+*.swp
+*.swo
+
+# ─────────────────────────────────────────────────────────────
+# Miscelánea binarios temporales / llaves
+# ─────────────────────────────────────────────────────────────
+*.pem
+*.key
+*.p12
+
+# ─────────────────────────────────────────────────────────────
+# NOTAS
+# - No ignores `next-env.d.ts`: se recomienda versionarlo.
+# - No ignores `public/`: contiene assets del sitio.
+# - Versiona tu lockfile (pnpm-lock.yaml / yarn.lock / package-lock.json).
+# ─────────────────────────────────────────────────────────────

@@ -1,0 +1,29 @@
+# ========== Builds y caches ==========
+.next/
+.next/cache/
+.next/static/
+.next/standalone/
+out/
+dist/
+.turbo/
+.vercel/
+.nx/
+.cache/
+.tmp/
+tmp/
+temp/
+
+# ========== Dependencias ==========
+node_modules/
+
+# ========== Cobertura / reports ==========
+coverage/
+playwright-report/
+test-results/
+
+# ========== Generados / binarios ==========
+*.min.js
+*.min.css
+
+# ========== Assets estáticos (no formatear) ==========
+public/**/*.{png,jpg,jpeg,webp,avif,gif,ico,svg,mp4,webm,mov,mp3,ogg,woff,woff2,ttf,otf}
